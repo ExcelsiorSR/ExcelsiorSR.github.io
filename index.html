@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utthan Singh Roy | AI & Finance</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --text: #e0e0e0;
+            --accent: #2ecc71; /* Green for returns */
+            --secondary: #3498db; /* Blue for risk */
+            --card-bg: #1a1a1a;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 1px solid #333;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-style: italic;
+        }
+        .bio-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .bio-badge {
+            display: inline-block;
+            background: #222;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 5px;
+            border: 1px solid #333;
+        }
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .project-title {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-top: 0;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-right: 10px;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--text);
+            color: var(--text);
+        }
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Utthan Singh Roy</h1>
+        <p class="tagline">"Building systems that balance Profit, Risk, and Conscience."</p>
+        
+        <div class="bio-section">
+            <span class="bio-badge">🎓 B.Sc. (Hons) Data Science & AI @ IIT Guwahati</span>
+            <span class="bio-badge">⚡ B.Tech Electrical Engineering @ MMMUT</span>
+        </div>
+    </header>
+
+    <section>
+        <h2 style="margin-top: 50px;">Featured Project</h2>
+        
+        <div class="project-card">
+            <h3 class="project-title">ESG-AI Portfolio Optimizer</h3>
+            <p>
+                A self-healing financial engine that solves the "Investor's Trilemma." 
+                I combined <strong>XGBoost</strong> for alpha generation with <strong>NSGA-II</strong> (Genetic Algorithms) 
+                to construct portfolios that maximize returns while minimizing Tail Risk (CVaR) and satisfying ESG constraints.
+            </p>
+            <p style="font-size: 0.9rem; color: #aaa;">
+                🛠️ Tech Stack: Python, Streamlit, GitHub Actions, Docker
+            </p>
+            
+            <div style="margin-top: 20px;">
+                <a href="esg-ai-optimizer.streamlit.app/" class="btn" target="_blank">🚀 Launch App</a>
+                <a href="https://aisegpo.hashnode.dev/esg-ai-optimizer" class="btn btn-outline" target="_blank">📄 Read Case Study</a>
+                <a href="https://github.com/ExcelsiorSR/Project_AI_ESGPO" class="btn btn-outline" target="_blank">💻 View Code</a>
+            </div>
+        </div>
+    </section>
+
+    <section style="margin-top: 50px;">
+        <h2>Connect</h2>
+        <p>
+            I am always open to discussing Quantitative Finance, Ethical AI, or just complex engineering problems.
+        </p>
+        <a href="https://linkedin.com/in/srexcelsior" style="color: var(--secondary); text-decoration: none; margin-right: 20px;">LinkedIn</a>
+        <a href="mailto:usingh123roy@gmail.com" style="color: var(--secondary); text-decoration: none;">Email Me</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Utthan Singh Roy. Hosted on GitHub Pages.</p>
+    </footer>
+</div>
+
+</body>
+</html>
