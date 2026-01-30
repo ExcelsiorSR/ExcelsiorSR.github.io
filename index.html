@@ -6,11 +6,11 @@
     <title>Utthan Singh Roy | AI & Engineering</title>
     <style>
         :root {
-            --bg: #0a0a0a;
+            --bg: #050505;       /* Very dark background */
             --text: #e0e0e0;
-            --accent: #2ecc71; /* Green */
-            --secondary: #3498db; /* Blue */
-            --card-bg: #1a1a1a;
+            --accent: #2ecc71;   /* Green for AI/Growth */
+            --gold: #d4af37;     /* Gold for the Frame/Excellence */
+            --card-bg: #121212;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -27,133 +27,183 @@
         }
         header {
             text-align: center;
-            padding: 40px 0 60px;
-            border-bottom: 1px solid #333;
+            padding: 50px 0;
+            border-bottom: 1px solid #222;
         }
-        /* NEW: Styles for the photo */
+        
+        /* --- NEW FANCY FRAME CSS --- */
+        .profile-wrapper {
+            display: inline-block;
+            position: relative;
+            padding: 6px; /* Spacing for the double border effect */
+            border: 1px solid var(--gold); /* Outer thin gold line */
+            border-radius: 15px; /* Soft Rectangle */
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15); /* Soft Gold Glow */
+            margin-bottom: 25px;
+        }
         .profile-img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover; /* Ensures photo doesn't stretch */
-            border-radius: 50%; /* Makes it round */
-            border: 3px solid var(--accent);
-            margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(46, 204, 113, 0.2);
+            display: block;
+            width: 160px;   /* Width */
+            height: 200px;  /* Height - Rectangular Portrait */
+            object-fit: cover;
+            border-radius: 10px; /* Slightly tighter radius than the wrapper */
+            border: 1px solid var(--gold); /* Inner thin gold line */
         }
+        /* --------------------------- */
+
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 10px;
-            margin-top: 0;
+            margin-bottom: 15px;
+            margin-top: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
         .tagline {
-            font-size: 1.2rem;
-            color: #aaa;
+            font-size: 1.1rem;
+            color: #b0b0b0;
             font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
         }
-        /* Highlight key words in the tagline */
-        .highlight { color: var(--accent); font-weight: bold; }
+        .highlight { color: var(--gold); font-weight: normal; }
         
         .bio-section {
-            margin-top: 30px;
+            margin-top: 35px;
             text-align: center;
         }
         .bio-badge {
             display: inline-block;
-            background: #222;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            background: #1a1a1a;
+            padding: 6px 16px;
+            border-radius: 4px; /* More squared/technical look */
+            font-size: 0.85rem;
             margin: 5px;
             border: 1px solid #333;
+            color: #888;
+            letter-spacing: 0.5px;
         }
+        
+        section { margin-top: 60px; }
+        
+        .section-title {
+            font-size: 1.4rem;
+            border-left: 4px solid var(--gold);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
         .project-card {
             background: var(--card-bg);
-            border-radius: 10px;
-            padding: 25px;
-            margin-top: 30px;
-            border-left: 4px solid var(--accent);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            padding: 30px;
+            border: 1px solid #222;
+            transition: transform 0.2s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-3px);
+            border-color: #333;
         }
         .project-title {
             font-size: 1.5rem;
             color: #fff;
             margin-top: 0;
+            margin-bottom: 10px;
         }
         .btn {
             display: inline-block;
-            background: var(--accent);
+            background: var(--gold); /* Gold Button */
             color: #000;
-            padding: 10px 20px;
+            padding: 10px 24px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 15px;
-            margin-right: 10px;
-            transition: transform 0.2s;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-right: 15px;
+            transition: opacity 0.2s;
         }
-        .btn:hover { transform: translateY(-2px); }
+        .btn:hover { opacity: 0.9; }
         .btn-outline {
             background: transparent;
-            border: 1px solid var(--text);
-            color: var(--text);
+            border: 1px solid #555;
+            color: #ccc;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
         }
+        .btn-outline:hover { border-color: #fff; color: #fff; }
+
         footer {
             text-align: center;
-            margin-top: 60px;
-            padding: 20px;
+            margin-top: 80px;
+            padding: 30px;
+            border-top: 1px solid #222;
             font-size: 0.8rem;
-            color: #666;
+            color: #555;
         }
+        a { color: var(--gold); text-decoration: none; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <img src="profile.jpg" alt="Utthan Singh Roy" class="profile-img">
+        <div class="profile-wrapper">
+            <img src="profile.png" alt="Utthan Singh Roy" class="profile-img">
+        </div>
         
         <h1>Utthan Singh Roy</h1>
-        <p class="tagline">"Merging <span class="highlight">human intelligence</span> with <span class="highlight">AI</span> to architect a smarter future."</p>
+        
+        <p class="tagline">
+            "Illuminating empty spaces with the <span class="highlight">quiet intelligence of AI</span>, 
+            guided by <span class="highlight">human intelligence</span> to architect the future."
+        </p>
         
         <div class="bio-section">
-            <span class="bio-badge">🎓 B.Sc. (Hons) Data Science & AI @ IIT Guwahati</span>
-            <span class="bio-badge">⚡ B.Tech Electrical Engineering @ MMMUT</span>
+            <span class="bio-badge">B.Sc. (Hons) Data Science & AI @ IIT Guwahati</span>
+            <span class="bio-badge">B.Tech Electrical Engineering @ MMMUT</span>
         </div>
     </header>
 
     <section>
-        <h2 style="margin-top: 50px;">Featured Work</h2>
+        <h2 class="section-title">FEATURED WORK</h2>
         
         <div class="project-card">
             <h3 class="project-title">ESG-AI Portfolio Optimizer</h3>
             <p>
                 A self-healing financial engine that solves the "Investor's Trilemma." 
-                I combined <strong>XGBoost</strong> for alpha generation with <strong>NSGA-II</strong> (Evolutionary Algorithms) 
-                to construct portfolios that maximize returns while minimizing Tail Risk and satisfying ESG constraints.
+                I developed a hybrid architecture combining <strong>XGBoost</strong> (for Alpha Generation) 
+                with <strong>NSGA-II</strong> (Evolutionary Algorithms) to construct portfolios that mathematically 
+                align Profit with Conscience.
             </p>
-            <p style="font-size: 0.9rem; color: #aaa;">
-                🛠️ Tech Stack: Python, Streamlit, GitHub Actions, Docker
+            <p style="font-size: 0.9rem; color: #666; margin-top: 15px;">
+                <em>Tech Stack: Python, Streamlit, Docker, GitHub Actions</em>
             </p>
             
-            <div style="margin-top: 20px;">
+            <div style="margin-top: 25px;">
                 <a href="esg-ai-optimizer.streamlit.app/" class="btn" target="_blank">🚀 Launch App</a>
                 <a href="https://aisegpo.hashnode.dev/esg-ai-optimizer" class="btn btn-outline" target="_blank">📄 Read Case Study</a>
-                <a href="https://github.com/ExcelsiorSR/Project_AI_ESGPO" class="btn btn-outline" target="_blank">💻 View Code</a>
+                <a href="https://github.com/ExcelsiorSR/Project_AI_ESGPO" class="btn btn-outline" target="_blank">💻 View Code</a> 
             </div>
         </div>
     </section>
 
-    <section style="margin-top: 50px;">
-        <h2>Connect</h2>
+    <section>
+        <h2 class="section-title">CONNECT</h2>
         <p>
-            I am interested in opportunities at the junction of AI, Core Engineering, and Quantitative Finance.
+            I am currently open to research collaborations and opportunities at the intersection of 
+            Quantitative Finance and Core Engineering.
         </p>
-        <a href="https://linkedin.com/in/your-profile" style="color: var(--secondary); text-decoration: none; margin-right: 20px;">LinkedIn</a>
-        <a href="mailto:usingh123roy@gmail.com" style="color: var(--secondary); text-decoration: none;">Email Me</a>
+        <div style="margin-top: 20px;">
+            <a href="https://linkedin.com/in/srexcelsior" style="margin-right: 25px; font-weight: bold;">LinkedIn</a>
+            <a href="mailto:usingh123roy@gmail.com" style="font-weight: bold;">Email Me</a>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Utthan Singh Roy. </p>
+        <p>&copy; 2026 Utthan Singh Roy.</p>
     </footer>
 </div>
 
