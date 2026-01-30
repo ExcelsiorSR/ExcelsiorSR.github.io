@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utthan Singh Roy | AI & Finance</title>
+    <title>Utthan Singh Roy | AI & Engineering</title>
     <style>
         :root {
             --bg: #0a0a0a;
             --text: #e0e0e0;
-            --accent: #2ecc71; /* Green for returns */
-            --secondary: #3498db; /* Blue for risk */
+            --accent: #2ecc71; /* Green */
+            --secondary: #3498db; /* Blue */
             --card-bg: #1a1a1a;
         }
         body {
@@ -27,20 +27,34 @@
         }
         header {
             text-align: center;
-            padding: 60px 0;
+            padding: 40px 0 60px;
             border-bottom: 1px solid #333;
+        }
+        /* NEW: Styles for the photo */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover; /* Ensures photo doesn't stretch */
+            border-radius: 50%; /* Makes it round */
+            border: 3px solid var(--accent);
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.2);
         }
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
+            margin-top: 0;
         }
         .tagline {
             font-size: 1.2rem;
-            color: var(--accent);
+            color: #aaa;
             font-style: italic;
         }
+        /* Highlight key words in the tagline */
+        .highlight { color: var(--accent); font-weight: bold; }
+        
         .bio-section {
-            margin-top: 40px;
+            margin-top: 30px;
             text-align: center;
         }
         .bio-badge {
@@ -96,8 +110,10 @@
 
 <div class="container">
     <header>
+        <img src="profile.jpg" alt="Utthan Singh Roy" class="profile-img">
+        
         <h1>Utthan Singh Roy</h1>
-        <p class="tagline">"Building systems that balance Profit, Risk, and Conscience."</p>
+        <p class="tagline">"Merging <span class="highlight">human intelligence</span> with <span class="highlight">AI</span> to architect a smarter future."</p>
         
         <div class="bio-section">
             <span class="bio-badge">🎓 B.Sc. (Hons) Data Science & AI @ IIT Guwahati</span>
@@ -106,14 +122,14 @@
     </header>
 
     <section>
-        <h2 style="margin-top: 50px;">Featured Project</h2>
+        <h2 style="margin-top: 50px;">Featured Work</h2>
         
         <div class="project-card">
             <h3 class="project-title">ESG-AI Portfolio Optimizer</h3>
             <p>
                 A self-healing financial engine that solves the "Investor's Trilemma." 
-                I combined <strong>XGBoost</strong> for alpha generation with <strong>NSGA-II</strong> (Genetic Algorithms) 
-                to construct portfolios that maximize returns while minimizing Tail Risk (CVaR) and satisfying ESG constraints.
+                I combined <strong>XGBoost</strong> for alpha generation with <strong>NSGA-II</strong> (Evolutionary Algorithms) 
+                to construct portfolios that maximize returns while minimizing Tail Risk and satisfying ESG constraints.
             </p>
             <p style="font-size: 0.9rem; color: #aaa;">
                 🛠️ Tech Stack: Python, Streamlit, GitHub Actions, Docker
@@ -130,14 +146,14 @@
     <section style="margin-top: 50px;">
         <h2>Connect</h2>
         <p>
-            I am always open to discussing Quantitative Finance, Ethical AI, or just complex engineering problems.
+            I am interested in opportunities at the junction of AI, Core Engineering, and Quantitative Finance.
         </p>
-        <a href="https://linkedin.com/in/srexcelsior" style="color: var(--secondary); text-decoration: none; margin-right: 20px;">LinkedIn</a>
+        <a href="https://linkedin.com/in/your-profile" style="color: var(--secondary); text-decoration: none; margin-right: 20px;">LinkedIn</a>
         <a href="mailto:usingh123roy@gmail.com" style="color: var(--secondary); text-decoration: none;">Email Me</a>
     </section>
 
     <footer>
-        <p>&copy; 2026 Utthan Singh Roy. Hosted on GitHub Pages.</p>
+        <p>&copy; 2026 Utthan Singh Roy. </p>
     </footer>
 </div>
 
