@@ -307,6 +307,40 @@
             font-size: 0.95rem;
         }
 
+        /* Research Interests Styles */
+        .interests-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .interest-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--card-secondary); /* Gives it the solid premium background */
+            border: 1px solid var(--border);
+            color: var(--text-primary); /* Brightens the text to match Tech Stack */
+            padding: 0.8rem 1.5rem; /* Tightens the shape to look more like a pill */
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds subtle 3D depth */
+        }
+        
+        .interest-pill i {
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+        
+        .interest-pill:hover {
+            color: var(--text-primary);
+            border-color: var(--accent);
+            background: rgba(99, 102, 241, 0.1);
+            transform: translateY(-3px);
+            box-shadow: var(--glow); /* Activates the indigo glow on hover */
+        }
+
         /* ========================================
            TECHNOLOGY STACK
            ======================================== */
@@ -1048,7 +1082,7 @@
     <!-- FOOTER -->
     <footer>
         <div class="container reveal">
-            <p class="footer-tagline">Engineering reliable AI systems for finance and critical infrastructure.</p>
+            <p class="footer-tagline">Intelligent Systems Engineered for Real-World Impact.</p>
             <div class="footer-credit">
                 <p>Designed & Developed by</p>
                 <p><strong>Utthan Singh Roy</strong></p>
