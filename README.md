@@ -5,7 +5,7 @@ A premium, production-quality personal portfolio designed to showcase engineerin
 Built with a focus on minimalism, modern typography, and sophisticated interactions, this portfolio intentionally avoids generic templates (like Bootstrap or Tailwind) to deliver a bespoke, Apple/Linear-inspired web experience.
 
 ## 🚀 Live Preview
-*[Insert your live hosting link here, e.g., https://excelsiorsr.github.io]*
+*[https://excelsiorsr.github.io]*
 
 ## 🛠️ Architecture & Tech Stack
 This project is engineered from scratch without reliance on heavy UI frameworks:
@@ -43,6 +43,10 @@ AvatarUSR.png - Profile imagery.
 ResumeUSR.pdf - Downloadable curriculum vitae.
 
 XAID.pdf / AIHS.pdf - Verifiable credentials and certifications.
+
+Project_QP_F_R.pdf - Formal technical research report for the Market Regime Shift Classifier.
+
+Project_R_AI_ESGPO.pdf - Formal technical research report for the Sustainable Portfolio Optimizer.
 
 📜 License
 Designed and developed by Utthan Singh Roy. All rights reserved.
