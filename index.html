@@ -175,6 +175,19 @@
             flex-wrap: wrap;
         }
 
+        /* Hero Subtitle Hierarchy Fix */
+        .name-highlight {
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .name-highlight::after {
+            color: var(--accent) !important; /* Makes the separator dot pop */
+            font-weight: 400;
+        }
+
         .hero-subtitle span::after {
             content: "•";
             margin-left: 1rem;
@@ -534,10 +547,27 @@
         }
 
         footer {
-            padding: 3rem 0;
+            padding: 6rem 0 4rem;
             text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-tagline {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+
+        .footer-credit p {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-credit strong {
+            color: var(--text-primary);
         }
 
         /* ========================================
@@ -552,6 +582,24 @@
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Subtle Hero Float Animation */
+        @keyframes subtleFloat {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+        .hero-image img {
+            animation: subtleFloat 6s ease-in-out infinite;
+        }
+
+        /* Button Glow on Hover */
+        .btn-primary:hover {
+            box-shadow: var(--glow);
+        }
+        .btn-secondary:hover {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
         }
 
         /* ========================================
@@ -604,9 +652,9 @@
     <section id="home">
         <div class="container hero-grid">
             <div class="hero-content reveal">
-                <h1>Engineering Intelligent Systems for Finance, AI & Electrical Infrastructure.</h1>
+                <h1>Engineering Intelligent Systems for Finance & Electrical Infrastructure.</h1>
                 <div class="hero-subtitle">
-                    <span>Utthan Singh Roy</span>
+                    <span class="name-highlight">Utthan Singh Roy</span>
                     <span>AI Engineer</span>
                     <span>Machine Learning</span>
                     <span>Quantitative Finance</span>
@@ -666,6 +714,28 @@
                     <h3>Software Engineering</h3>
                     <p>Architecting robust, production-level code utilizing modern CI/CD and deployment practices.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH INTERESTS -->
+    <section id="research-interests">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Research Interests</h2>
+            </div>
+            <div class="interests-grid reveal">
+                <div class="interest-pill"><i class="ph ph-chart-line"></i> Financial Machine Learning</div>
+                <div class="interest-pill"><i class="ph ph-brain"></i> Large Language Models (LLMs)</div>
+                <div class="interest-pill"><i class="ph ph-tree-structure"></i> Agentic Frameworks (LangGraph)</div>
+                <div class="interest-pill"><i class="ph ph-database"></i> Retrieval-Augmented Generation (RAG)</div>
+                <div class="interest-pill"><i class="ph ph-magnifying-glass-plus"></i> Explainable AI (XAI)</div>
+                <div class="interest-pill"><i class="ph ph-clock-counter-clockwise"></i> Time Series Forecasting</div>
+                <div class="interest-pill"><i class="ph ph-math-operations"></i> Optimization Algorithms</div>
+                <div class="interest-pill"><i class="ph ph-copy"></i> Digital Twins</div>
+                <div class="interest-pill"><i class="ph ph-users-three"></i> Multi-Agent Systems</div>
+                <div class="interest-pill"><i class="ph ph-lightning"></i> Power System Analytics</div>
+                <div class="interest-pill"><i class="ph ph-buildings"></i> Intelligent Infrastructure</div>
             </div>
         </div>
     </section>
@@ -742,15 +812,15 @@
                     </p>
                     <div class="project-metrics">
                         <div class="metric">
-                            <h4>0.97</h4>
+                            <h4 class="counter" data-target="0.97">0</h4>
                             <p>ROC-AUC</p>
                         </div>
                         <div class="metric">
-                            <h4>88.9%</h4>
+                            <h4 class="counter" data-target="88.9" data-suffix="%">0</h4>
                             <p>Crash Recall</p>
                         </div>
                         <div class="metric">
-                            <h4>41</h4>
+                            <h4 class="counter" data-target="41">0</h4>
                             <p>Hybrid Features</p>
                         </div>
                     </div>
@@ -782,15 +852,15 @@
                     </p>
                     <div class="project-metrics">
                         <div class="metric">
-                            <h4>11.5%</h4>
+                            <h4 class="counter" data-target="11.5" data-suffix="%">0</h4>
                             <p>Maximum Drawdown</p>
                         </div>
                         <div class="metric">
-                            <h4>76.5</h4>
+                            <h4 class="counter" data-target="76.5">0</h4>
                             <p>Average ESG</p>
                         </div>
                         <div class="metric">
-                            <h4>3</h4>
+                            <h4 class="counter" data-target="3">0</h4>
                             <p>Core Objectives</p>
                         </div>
                     </div>
@@ -977,8 +1047,13 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="container">
-            <p>Designed & Developed by Utthan Singh Roy • 2026</p>
+        <div class="container reveal">
+            <p class="footer-tagline">Engineering reliable AI systems for finance and critical infrastructure.</p>
+            <div class="footer-credit">
+                <p>Designed & Developed by</p>
+                <p><strong>Utthan Singh Roy</strong></p>
+                <p>© 2026</p>
+            </div>
         </div>
     </footer>
 
@@ -1013,6 +1088,44 @@
         document.querySelectorAll('.reveal').forEach((element) => {
             observer.observe(element);
         });
+        // Number Counter Animation
+        const countElements = document.querySelectorAll('.counter');
+        const countObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const targetValue = parseFloat(target.getAttribute('data-target'));
+                    const isFloat = target.getAttribute('data-target').includes('.');
+                    const suffix = target.getAttribute('data-suffix') || '';
+                    const duration = 2000; // 2 seconds
+                    const frameRate = 30; // ms per frame
+                    const totalFrames = Math.round(duration / frameRate);
+                    let frame = 0;
+
+                    const counter = setInterval(() => {
+                        frame++;
+                        const progress = frame / totalFrames;
+                        // easeOutQuart for smooth deceleration
+                        const easeProgress = 1 - Math.pow(1 - progress, 4);
+                        const current = targetValue * easeProgress;
+
+                        if (isFloat) {
+                            target.innerText = current.toFixed(2) + suffix;
+                        } else {
+                            target.innerText = Math.round(current) + suffix;
+                        }
+
+                        if (frame === totalFrames) {
+                            clearInterval(counter);
+                            target.innerText = targetValue + suffix; // Ensure exact final value
+                        }
+                    }, frameRate);
+                    observer.unobserve(target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        countElements.forEach(el => countObserver.observe(el));
     </script>
 </body>
 </html>
