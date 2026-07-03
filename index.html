@@ -1,210 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utthan Singh Roy | AI & Engineering</title>
-    <style>
-        :root {
-            --bg: #050505;       /* Very dark background */
-            --text: #e0e0e0;
-            --accent: #2ecc71;   /* Green for AI/Growth */
-            --gold: #d4af37;     /* Gold for the Frame/Excellence */
-            --card-bg: #121212;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            text-align: center;
-            padding: 50px 0;
-            border-bottom: 1px solid #222;
-        }
-        
-        /* --- NEW FANCY FRAME CSS --- */
-        .profile-wrapper {
-            display: inline-block;
-            position: relative;
-            padding: 6px; /* Spacing for the double border effect */
-            border: 1px solid var(--gold); /* Outer thin gold line */
-            border-radius: 15px; /* Soft Rectangle */
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15); /* Soft Gold Glow */
-            margin-bottom: 25px;
-        }
-        .profile-img {
-            display: block;
-            width: 160px;   /* Width */
-            height: 200px;  /* Height - Rectangular Portrait */
-            object-fit: cover;
-            border-radius: 10px; /* Slightly tighter radius than the wrapper */
-            border: 1px solid var(--gold); /* Inner thin gold line */
-        }
-        /* --------------------------- */
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            margin-top: 10px;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-        .tagline {
-            font-size: 1.1rem;
-            color: #b0b0b0;
-            font-style: italic;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-        .highlight { color: var(--gold); font-weight: normal; }
-        
-        .bio-section {
-            margin-top: 35px;
-            text-align: center;
-        }
-        .bio-badge {
-            display: inline-block;
-            background: #1a1a1a;
-            padding: 6px 16px;
-            border-radius: 4px; /* More squared/technical look */
-            font-size: 0.85rem;
-            margin: 5px;
-            border: 1px solid #333;
-            color: #888;
-            letter-spacing: 0.5px;
-        }
-        
-        section { margin-top: 60px; }
-        
-        .section-title {
-            font-size: 1.4rem;
-            border-left: 4px solid var(--gold);
-            padding-left: 15px;
-            margin-bottom: 30px;
-            color: #fff;
-        }
+    <title>Utthan Singh Roy | AI Engineer</title>
 
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 30px;
-            border: 1px solid #222;
-            transition: transform 0.2s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-3px);
-            border-color: #333;
-        }
-        .project-title {
-            font-size: 1.5rem;
-            color: #fff;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        .btn {
-            display: inline-block;
-            background: var(--gold); /* Gold Button */
-            color: #000;
-            padding: 10px 24px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            margin-top: 20px;
-            margin-right: 15px;
-            transition: opacity 0.2s;
-        }
-        .btn:hover { opacity: 0.9; }
-        .btn-outline {
-            background: transparent;
-            border: 1px solid #555;
-            color: #ccc;
-            padding: 10px 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        .btn-outline:hover { border-color: #fff; color: #fff; }
+    <meta name="description"
+        content="Portfolio of Utthan Singh Roy - AI Engineer, Machine Learning, Quantitative Finance and Power Systems.">
 
-        footer {
-            text-align: center;
-            margin-top: 80px;
-            padding: 30px;
-            border-top: 1px solid #222;
-            font-size: 0.8rem;
-            color: #555;
-        }
-        a { color: var(--gold); text-decoration: none; }
-    </style>
+    <meta name="keywords"
+        content="Utthan Singh Roy, AI, Machine Learning, Quantitative Finance, IIT Guwahati, Portfolio">
+
+    <meta name="author" content="Utthan Singh Roy">
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-<div class="container">
-    <header>
-        <div class="profile-wrapper">
-            <img src="profile.png" alt="Utthan Singh Roy" class="profile-img">
+    <!-- ========================================= -->
+
+    <!-- NAVBAR -->
+
+    <!-- ========================================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="#" class="logo">
+
+                USR
+
+            </a>
+
+            <nav>
+
+                <ul class="nav-links">
+
+                    <li><a href="#home">Home</a></li>
+
+                    <li><a href="#about">About</a></li>
+
+                    <li><a href="#education">Education</a></li>
+
+                    <li><a href="#skills">Skills</a></li>
+
+                    <li><a href="#projects">Projects</a></li>
+
+                    <li><a href="#achievements">Achievements</a></li>
+
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+
+            </nav>
+
         </div>
-        
-        <h1>Utthan Singh Roy</h1>
-        
-        <p class="tagline">
-            "Illuminating empty spaces with the <span class="highlight">quiet intelligence of AI</span>, 
-            guided by <span class="highlight">human intelligence</span> to architect the future."
-        </p>
-        
-        <div class="bio-section">
-            <span class="bio-badge">B.Sc. (Hons) Data Science & AI @ IIT Guwahati</span>
-            <span class="bio-badge">B.Tech Electrical Engineering @ MMMUT</span>
-        </div>
+
     </header>
 
-    <section>
-        <h2 class="section-title">FEATURED WORK</h2>
-        
-        <div class="project-card">
-            <h3 class="project-title">ESG-AI Portfolio Optimizer</h3>
-            <p>
-                A self-healing financial engine that solves the "Investor's Trilemma." 
-                I developed a hybrid architecture combining <strong>XGBoost</strong> (for Alpha Generation) 
-                with <strong>NSGA-II</strong> (Evolutionary Algorithms) to construct portfolios that mathematically 
-                align Profit with Conscience.
-            </p>
-            <p style="font-size: 0.9rem; color: #666; margin-top: 15px;">
-                <em>Tech Stack: Python, Streamlit, Docker, GitHub Actions</em>
-            </p>
-            
-            <div style="margin-top: 25px;">
-                <a href="esg-ai-optimizer.streamlit.app/" class="btn" target="_blank">🚀 Launch App</a>
-                <a href="https://aisegpo.hashnode.dev/esg-ai-optimizer" class="btn btn-outline" target="_blank">📄 Read Case Study</a>
-                <a href="https://github.com/ExcelsiorSR/Project_AI_ESGPO" class="btn btn-outline" target="_blank">💻 View Code</a> 
+    <!-- ========================================= -->
+
+    <!-- HERO -->
+
+    <!-- ========================================= -->
+
+    <section id="home" class="hero">
+
+        <div class="container hero-grid">
+
+            <div class="hero-content">
+
+                <span class="hero-label">
+
+                    AI • Machine Learning • Quantitative Finance
+
+                </span>
+
+                <h1>
+
+                    Building Intelligent Systems That Solve
+
+                    <span>
+
+                        Real Engineering Problems.
+
+                    </span>
+
+                </h1>
+
+                <p class="hero-description">
+
+                    I'm <strong>Utthan Singh Roy</strong>, a dual-degree engineering student
+                    concurrently pursuing a <strong>B.Sc. (Hons.) in Data Science & Artificial Intelligence
+                    at IIT Guwahati</strong> and a
+                    <strong>B.Tech in Electrical Engineering at MMMUT Gorakhpur.</strong>
+
+                    My work lies at the intersection of
+                    Artificial Intelligence,
+                    Quantitative Finance,
+                    Digital Twins,
+                    Explainable AI,
+                    and Intelligent Power Infrastructure.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="primary-btn">
+
+                        View Projects
+
+                    </a>
+
+                    <a href="Resume.pdf" target="_blank" class="secondary-btn">
+
+                        Download Resume
+
+                    </a>
+
+                </div>
+
+                <div class="hero-socials">
+
+                    <a href="https://github.com/ExcelsiorSR" target="_blank">
+
+                        <i class="fab fa-github"></i>
+
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/srexcelsior/" target="_blank">
+
+                        <i class="fab fa-linkedin"></i>
+
+                    </a>
+
+                    <a href="mailto:r.utthan@op.iitg.ac.in">
+
+                        <i class="fas fa-envelope"></i>
+
+                    </a>
+
+                </div>
+
             </div>
+
+            <div class="hero-image">
+
+                <img src="AvatarUSR.png"
+                    alt="Utthan Singh Roy">
+
+            </div>
+
         </div>
+
     </section>
 
-    <section>
-        <h2 class="section-title">CONNECT</h2>
-        <p>
-            I am interested in opportunities at the junction of AI, Core Engineering, AI for Healthcare and Quantitative Finance.
-        </p>
-        <div style="margin-top: 20px;">
-            <a href="https://linkedin.com/in/srexcelsior" style="margin-right: 25px; font-weight: bold;">LinkedIn</a>
-            <a href="mailto:usingh123roy@gmail.com" style="font-weight: bold;">Email Me</a>
+    <!-- ========================================= -->
+
+    <!-- ABOUT -->
+
+    <!-- ========================================= -->
+
+    <section id="about" class="section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+
+                    Who I Am
+
+                </h2>
+
+                <p>
+
+                    Engineering intelligent systems through the convergence of
+                    Artificial Intelligence,
+                    Mathematics,
+                    Software Engineering,
+                    and Electrical Infrastructure.
+
+                </p>
+
+            </div>
+
+            <div class="about-content">
+
+                <p>
+
+                    I am a dual-degree engineering student driven by a passion for
+                    building intelligent systems capable of solving complex
+                    real-world problems.
+
+                    Alongside pursuing a Bachelor of Science (Hons.) in
+                    Data Science & Artificial Intelligence at
+                    IIT Guwahati and a Bachelor of Technology in
+                    Electrical Engineering at MMMUT Gorakhpur,
+                    I specialize in designing scalable AI pipelines,
+                    quantitative optimization frameworks,
+                    and production-ready machine learning systems.
+
+                </p>
+
+                <p>
+
+                    My work spans Financial Machine Learning,
+                    Explainable AI,
+                    Quantitative Portfolio Optimization,
+                    Digital Twin technologies,
+                    Predictive Maintenance,
+                    and Intelligent Infrastructure.
+
+                    From engineering market regime forecasting models capable of
+                    predicting systemic financial stress to developing autonomous
+                    Digital Twins for resilient power grids,
+                    I enjoy translating rigorous mathematical ideas into
+                    maintainable software systems.
+
+                </p>
+
+                <p>
+
+                    I believe engineering is not merely writing code—
+                    it is designing systems that remain reliable,
+                    interpretable,
+                    scalable,
+                    and impactful under real-world uncertainty.
+
+                </p>
+
+            </div>
+
+            <div class="about-highlights">
+
+                <div class="highlight-card">
+
+                    <i class="fas fa-brain"></i>
+
+                    <h3>
+
+                        Artificial Intelligence
+
+                    </h3>
+
+                    <p>
+
+                        Machine Learning, Explainable AI,
+                        Cost-Sensitive Learning and Deep Learning.
+
+                    </p>
+
+                </div>
+
+                <div class="highlight-card">
+
+                    <i class="fas fa-chart-line"></i>
+
+                    <h3>
+
+                        Quantitative Finance
+
+                    </h3>
+
+                    <p>
+
+                        Portfolio Optimization,
+                        Financial Forecasting,
+                        Risk Modelling
+                        and ESG Analytics.
+
+                    </p>
+
+                </div>
+
+                <div class="highlight-card">
+
+                    <i class="fas fa-bolt"></i>
+
+                    <h3>
+
+                        Power Systems
+
+                    </h3>
+
+                    <p>
+
+                        Digital Twins,
+                        Predictive Maintenance,
+                        Power Grid Intelligence,
+                        Autonomous Infrastructure.
+
+                    </p>
+
+                </div>
+
+                <div class="highlight-card">
+
+                    <i class="fas fa-code"></i>
+
+                    <h3>
+
+                        Software Engineering
+
+                    </h3>
+
+                    <p>
+
+                        Building production-grade,
+                        scalable,
+                        data-driven systems using modern engineering
+                        practices.
+
+                    </p>
+
+                </div>
+
+            </div>
+
         </div>
+
     </section>
 
-    <footer>
-        <p>&copy; 2026 Utthan Singh Roy.</p>
-    </footer>
-</div>
+    <!-- ========================================= -->
 
-</body>
-</html>
+    <!-- EDUCATION -->
+
+    <!-- ========================================= -->
+
+    <section id="education" class="section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+
+                    Education
+
+                </h2>
+
+                <p>
+
+                    Academic foundations spanning
+                    Artificial Intelligence,
+                    Data Science,
+                    Electrical Engineering
+                    and Applied Mathematics.
+
+                </p>
+
+            </div>
+
+            <div class="education-grid">
+
+                <div class="education-card">
+
+                    <span class="year">
+
+                        2023 — Present
+
+                    </span>
+
+                    <h3>
+
+                        Indian Institute of Technology Guwahati
+
+                    </h3>
+
+                    <h4>
+
+                        B.Sc. (Hons.) Data Science & Artificial Intelligence
+
+                    </h4>
+
+                    <p>
+
+                        CPI
+
+                    </p>
+
+                    <strong>
+
+                        8.24
+
+                    </strong>
+
+                </div>
+
+                <div class="education-card">
+
+                    <span class="year">
+
+                        2023 — Present
+
+                    </span>
+
+                    <h3>
+
+                        Madan Mohan Malaviya University of Technology
+
+                    </h3>
+
+                    <h4>
+
+                        B.Tech Electrical Engineering
+
+                    </h4>
+
+                    <p>
+
+                        CGPA
+
+                    </p>
+
+                    <strong>
+
+                        8.36
+
+                    </strong>
+
+                </div>
+
+                <div class="education-card">
+
+                    <span class="year">
+
+                        2021
+
+                    </span>
+
+                    <h3>
+
+                        St. Joseph's School
+
+                    </h3>
+
+                    <h4>
+
+                        Senior Secondary (CBSE)
+
+                    </h4>
+
+                    <strong>
+
+                        94.5%
+
+                    </strong>
+
+                </div>
+
+                <div class="education-card">
+
+                    <span class="year">
+
+                        2019
+
+                    </span>
+
+                    <h3>
+
+                        St. Joseph's School
+
+                    </h3>
+
+                    <h4>
+
+                        Secondary (CBSE)
+
+                    </h4>
+
+                    <strong>
+
+                        93.8%
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================================ -->
+    <!-- NEXT PART STARTS HERE -->
+    <!-- Skills -->
