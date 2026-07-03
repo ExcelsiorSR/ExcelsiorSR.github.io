@@ -1,510 +1,1013 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Utthan Singh Roy | AI Engineer</title>
-
-    <meta name="description"
-        content="Portfolio of Utthan Singh Roy - AI Engineer, Machine Learning, Quantitative Finance and Power Systems.">
-
-    <meta name="keywords"
-        content="Utthan Singh Roy, AI, Machine Learning, Quantitative Finance, IIT Guwahati, Portfolio">
-
-    <meta name="author" content="Utthan Singh Roy">
-
-    <!-- Google Fonts -->
-
+    
+    <!-- Premium Fonts: Space Grotesk for Headings, Inter for Body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons (Minimal Monochrome Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
-        rel="stylesheet">
+    <style>
+        /* ========================================
+           CSS VARIABLES & THEME
+           ======================================== */
+        :root {
+            --bg: #0B1120;
+            --card-primary: #111827;
+            --card-secondary: #1A2235;
+            --accent: #6366F1;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --border: rgba(255, 255, 255, 0.08);
+            --glow: 0 0 40px rgba(99, 102, 241, 0.15);
+            
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-    <!-- Font Awesome -->
+        /* ========================================
+           RESET & GLOBAL STYLES
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        html {
+            scroll-behavior: smooth;
+        }
 
-    <!-- CSS -->
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
 
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        /* ========================================
+           NAVIGATION
+           ======================================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            transition: var(--transition);
+            padding: 1.5rem 0;
+        }
+
+        nav.scrolled {
+            background: rgba(11, 17, 32, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-subtitle span::after {
+            content: "•";
+            margin-left: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-subtitle span:last-child::after {
+            display: none;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--text-primary);
+            color: var(--bg);
+        }
+
+        .btn-primary:hover {
+            background: #E2E8F0;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border-color: var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--card-primary);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: var(--glow);
+            border: 1px solid var(--border);
+        }
+
+        /* ========================================
+           ABOUT SECTION
+           ======================================== */
+        .about-bio {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin-bottom: 4rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .about-card {
+            background: var(--card-primary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .about-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: var(--glow);
+        }
+
+        .about-card i {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .about-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+           TECHNOLOGY STACK
+           ======================================== */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .skill-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .pill {
+            background: var(--card-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .pill:hover {
+            border-color: var(--accent);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        /* ========================================
+           FEATURED PROJECTS
+           ======================================== */
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: var(--card-primary);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-title h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .metric h4 {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .metric p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ========================================
+           EDUCATION TIMELINE
+           ======================================== */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.3rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 2px solid var(--accent);
+        }
+
+        .timeline-card {
+            background: var(--card-primary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-header h3 {
+            font-size: 1.3rem;
+        }
+
+        .timeline-header span {
+            color: var(--text-secondary);
+            font-family: var(--font-heading);
+        }
+
+        .timeline-score {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* ========================================
+           HIGHLIGHTS & CERTIFICATIONS
+           ======================================== */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .highlight-card {
+            background: var(--card-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+        
+        .highlight-card:hover {
+            border-color: var(--text-secondary);
+        }
+
+        .highlight-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ========================================
+           CONTACT & FOOTER
+           ======================================== */
+        #contact {
+            text-align: center;
+            padding: 150px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        #contact h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+           ANIMATIONS & UTILITIES
+           ======================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========================================
+           RESPONSIVE DESIGN
+           ======================================== */
+        @media (max-width: 900px) {
+            .hero-grid, .about-grid, .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            .hero-image {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+            .project-metrics {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .project-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+            .nav-links {
+                display: none; /* In a full build, add a hamburger menu here */
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-    <!-- ========================================= -->
-
-    <!-- NAVBAR -->
-
-    <!-- ========================================= -->
-
-    <header class="navbar">
-
-        <div class="container nav-container">
-
-            <a href="#" class="logo">
-
-                USR
-
-            </a>
-
-            <nav>
-
-                <ul class="nav-links">
-
-                    <li><a href="#home">Home</a></li>
-
-                    <li><a href="#about">About</a></li>
-
-                    <li><a href="#education">Education</a></li>
-
-                    <li><a href="#skills">Skills</a></li>
-
-                    <li><a href="#projects">Projects</a></li>
-
-                    <li><a href="#achievements">Achievements</a></li>
-
-                    <li><a href="#contact">Contact</a></li>
-
-                </ul>
-
-            </nav>
-
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#home" class="logo">USR.</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#highlights">Highlights</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
+    </nav>
 
-    </header>
-
-    <!-- ========================================= -->
-
-    <!-- HERO -->
-
-    <!-- ========================================= -->
-
-    <section id="home" class="hero">
-
+    <!-- HERO SECTION -->
+    <section id="home">
         <div class="container hero-grid">
-
-            <div class="hero-content">
-
-                <span class="hero-label">
-
-                    AI • Machine Learning • Quantitative Finance
-
-                </span>
-
-                <h1>
-
-                    Building Intelligent Systems That Solve
-
-                    <span>
-
-                        Real Engineering Problems.
-
-                    </span>
-
-                </h1>
-
-                <p class="hero-description">
-
-                    I'm <strong>Utthan Singh Roy</strong>, a dual-degree engineering student
-                    concurrently pursuing a <strong>B.Sc. (Hons.) in Data Science & Artificial Intelligence
-                    at IIT Guwahati</strong> and a
-                    <strong>B.Tech in Electrical Engineering at MMMUT Gorakhpur.</strong>
-
-                    My work lies at the intersection of
-                    Artificial Intelligence,
-                    Quantitative Finance,
-                    Digital Twins,
-                    Explainable AI,
-                    and Intelligent Power Infrastructure.
-
+            <div class="hero-content reveal">
+                <h1>Engineering Intelligent Systems for Finance, AI & Critical Infrastructure.</h1>
+                <div class="hero-subtitle">
+                    <span>Utthan Singh Roy</span>
+                    <span>AI Engineer</span>
+                    <span>Machine Learning</span>
+                    <span>Quantitative Finance</span>
+                    <span>Electrical Engineering</span>
+                </div>
+                <p class="hero-desc">
+                    I am a dual-degree engineering student driven by a passion for building intelligent systems that solve complex real-world problems. Pursuing a B.Sc. (Hons.) in Data Science & Artificial Intelligence at IIT Guwahati alongside a B.Tech in Electrical Engineering at MMMUT Gorakhpur.
                 </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#projects" class="primary-btn">
-
-                        View Projects
-
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        View Projects <i class="ph ph-arrow-right"></i>
                     </a>
-
-                    <a href="Resume.pdf" target="_blank" class="secondary-btn">
-
-                        Download Resume
-
+                    <a href="ResumeUSR.pdf" target="_blank" class="btn btn-secondary">
+                        <i class="ph ph-download-simple"></i> Resume
                     </a>
-
+                    <a href="https://github.com/ExcelsiorSR" target="_blank" class="btn btn-secondary">
+                        <i class="ph ph-github-logo"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/srexcelsior/" target="_blank" class="btn btn-secondary">
+                        <i class="ph ph-linkedin-logo"></i>
+                    </a>
                 </div>
-
-                <div class="hero-socials">
-
-                    <a href="https://github.com/ExcelsiorSR" target="_blank">
-
-                        <i class="fab fa-github"></i>
-
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/srexcelsior/" target="_blank">
-
-                        <i class="fab fa-linkedin"></i>
-
-                    </a>
-
-                    <a href="mailto:r.utthan@op.iitg.ac.in">
-
-                        <i class="fas fa-envelope"></i>
-
-                    </a>
-
-                </div>
-
             </div>
-
-            <div class="hero-image">
-
-                <img src="AvatarUSR.png"
-                    alt="Utthan Singh Roy">
-
+            <div class="hero-image reveal">
+                <img src="AvatarUSR.png" alt="Utthan Singh Roy">
             </div>
-
         </div>
-
     </section>
 
-    <!-- ========================================= -->
-
-    <!-- ABOUT -->
-
-    <!-- ========================================= -->
-
-    <section id="about" class="section">
-
+    <!-- ABOUT SECTION -->
+    <section id="about">
         <div class="container">
-
-            <div class="section-heading">
-
-                <h2>
-
-                    Who I Am
-
-                </h2>
-
-                <p>
-
-                    Engineering intelligent systems through the convergence of
-                    Artificial Intelligence,
-                    Mathematics,
-                    Software Engineering,
-                    and Electrical Infrastructure.
-
-                </p>
-
+            <div class="section-header reveal">
+                <h2>Who I Am</h2>
             </div>
-
-            <div class="about-content">
-
-                <p>
-
-                    I am a dual-degree engineering student driven by a passion for
-                    building intelligent systems capable of solving complex
-                    real-world problems.
-
-                    Alongside pursuing a Bachelor of Science (Hons.) in
-                    Data Science & Artificial Intelligence at
-                    IIT Guwahati and a Bachelor of Technology in
-                    Electrical Engineering at MMMUT Gorakhpur,
-                    I specialize in designing scalable AI pipelines,
-                    quantitative optimization frameworks,
-                    and production-ready machine learning systems.
-
-                </p>
-
-                <p>
-
-                    My work spans Financial Machine Learning,
-                    Explainable AI,
-                    Quantitative Portfolio Optimization,
-                    Digital Twin technologies,
-                    Predictive Maintenance,
-                    and Intelligent Infrastructure.
-
-                    From engineering market regime forecasting models capable of
-                    predicting systemic financial stress to developing autonomous
-                    Digital Twins for resilient power grids,
-                    I enjoy translating rigorous mathematical ideas into
-                    maintainable software systems.
-
-                </p>
-
-                <p>
-
-                    I believe engineering is not merely writing code—
-                    it is designing systems that remain reliable,
-                    interpretable,
-                    scalable,
-                    and impactful under real-world uncertainty.
-
-                </p>
-
+            <p class="about-bio reveal">
+                My work spans financial machine learning, explainable AI, algorithmic optimization, and digital twin technologies. From engineering market regime forecasting models capable of identifying systemic financial stress to developing multi-objective portfolio optimization engines and AI-driven predictive maintenance frameworks for power systems, I focus on translating rigorous mathematical ideas into practical, production-ready software architecture.
+            </p>
+            <div class="about-grid reveal">
+                <div class="about-card">
+                    <i class="ph ph-brain"></i>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Designing scalable machine learning pipelines, predictive modeling, and explainable AI systems.</p>
+                </div>
+                <div class="about-card">
+                    <i class="ph ph-chart-line-up"></i>
+                    <h3>Quantitative Finance</h3>
+                    <p>Building mathematical frameworks for portfolio optimization and market regime forecasting.</p>
+                </div>
+                <div class="about-card">
+                    <i class="ph ph-lightning"></i>
+                    <h3>Power Systems</h3>
+                    <p>Engineering resilient grid infrastructures and predictive maintenance models for critical assets.</p>
+                </div>
+                <div class="about-card">
+                    <i class="ph ph-code"></i>
+                    <h3>Software Engineering</h3>
+                    <p>Architecting robust, production-level code utilizing modern CI/CD and deployment practices.</p>
+                </div>
             </div>
-
-            <div class="about-highlights">
-
-                <div class="highlight-card">
-
-                    <i class="fas fa-brain"></i>
-
-                    <h3>
-
-                        Artificial Intelligence
-
-                    </h3>
-
-                    <p>
-
-                        Machine Learning, Explainable AI,
-                        Cost-Sensitive Learning and Deep Learning.
-
-                    </p>
-
-                </div>
-
-                <div class="highlight-card">
-
-                    <i class="fas fa-chart-line"></i>
-
-                    <h3>
-
-                        Quantitative Finance
-
-                    </h3>
-
-                    <p>
-
-                        Portfolio Optimization,
-                        Financial Forecasting,
-                        Risk Modelling
-                        and ESG Analytics.
-
-                    </p>
-
-                </div>
-
-                <div class="highlight-card">
-
-                    <i class="fas fa-bolt"></i>
-
-                    <h3>
-
-                        Power Systems
-
-                    </h3>
-
-                    <p>
-
-                        Digital Twins,
-                        Predictive Maintenance,
-                        Power Grid Intelligence,
-                        Autonomous Infrastructure.
-
-                    </p>
-
-                </div>
-
-                <div class="highlight-card">
-
-                    <i class="fas fa-code"></i>
-
-                    <h3>
-
-                        Software Engineering
-
-                    </h3>
-
-                    <p>
-
-                        Building production-grade,
-                        scalable,
-                        data-driven systems using modern engineering
-                        practices.
-
-                    </p>
-
-                </div>
-
-            </div>
-
         </div>
-
     </section>
 
-    <!-- ========================================= -->
+    <!-- TECHNOLOGY STACK -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Technology Stack</h2>
+            </div>
+            <div class="skills-container reveal">
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <div class="skill-pills">
+                        <span class="pill">Python</span>
+                        <span class="pill">Java</span>
+                        <span class="pill">C</span>
+                        <span class="pill">SQL</span>
+                        <span class="pill">R</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Machine Learning & AI</h3>
+                    <div class="skill-pills">
+                        <span class="pill">TensorFlow</span>
+                        <span class="pill">Scikit-Learn</span>
+                        <span class="pill">XGBoost</span>
+                        <span class="pill">SHAP</span>
+                        <span class="pill">FinBERT</span>
+                        <span class="pill">NSGA-II</span>
+                        <span class="pill">Pandas</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Architecture</h3>
+                    <div class="skill-pills">
+                        <span class="pill">Git</span>
+                        <span class="pill">GitHub Actions</span>
+                        <span class="pill">Streamlit</span>
+                        <span class="pill">SQLite</span>
+                        <span class="pill">TA-Lib</span>
+                        <span class="pill">API Integration</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Exploring</h3>
+                    <div class="skill-pills">
+                        <span class="pill">LangGraph</span>
+                        <span class="pill">Reinforcement Learning</span>
+                        <span class="pill">pandapower</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Featured Engineering</h2>
+            </div>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-title">
+                            <h3>AI-Powered Market Regime Shift Classifier</h3>
+                        </div>
+                    </div>
+                    <p class="project-desc">
+                        Designed a systemic market stress forecasting system utilizing a 41-feature hybrid pipeline of quantitative indicators and FinBERT sentiment analysis. Engineered a cost-sensitive XGBoost ensemble model, accompanied by a real-time inference dashboard featuring SHAP explainability.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <h4>0.97</h4>
+                            <p>ROC-AUC</p>
+                        </div>
+                        <div class="metric">
+                            <h4>88.9%</h4>
+                            <p>Crash Recall</p>
+                        </div>
+                        <div class="metric">
+                            <h4>41</h4>
+                            <p>Hybrid Features</p>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="skill-pills">
+                            <span class="pill">XGBoost</span>
+                            <span class="pill">FinBERT</span>
+                            <span class="pill">Streamlit</span>
+                            <span class="pill">SQLite</span>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="https://github.com/ExcelsiorSR/Project_QP" target="_blank" class="btn btn-secondary">GitHub</a>
+                            <a href="https://youtu.be/tlqNIYQyewc" target="_blank" class="btn btn-primary">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-title">
+                            <h3>Automated Sustainable Portfolio Optimizer</h3>
+                        </div>
+                    </div>
+                    <p class="project-desc">
+                        Architected a quantitative finance framework to mathematically balance capital appreciation, tail risk (CVaR), and Environmental, Social, and Governance (ESG) mandates. Implemented the NSGA-II evolutionary algorithm paired with an XGBoost classifier to dynamically optimize asset weights.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <h4>11.5%</h4>
+                            <p>Maximum Drawdown</p>
+                        </div>
+                        <div class="metric">
+                            <h4>76.5</h4>
+                            <p>Average ESG</p>
+                        </div>
+                        <div class="metric">
+                            <h4>3</h4>
+                            <p>Core Objectives</p>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="skill-pills">
+                            <span class="pill">NSGA-II</span>
+                            <span class="pill">XGBoost</span>
+                            <span class="pill">Pandas</span>
+                            <span class="pill">GitHub Actions</span>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="https://github.com/ExcelsiorSR/Project_AI_ESGPO" target="_blank" class="btn btn-secondary">GitHub</a>
+                            <a href="https://youtu.be/5hY4WOF1Rcs" target="_blank" class="btn btn-primary">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CURRENT RESEARCH -->
+    <section id="research">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>What I'm Building Next</h2>
+            </div>
+            <div class="projects-grid">
+                
+                <!-- SURVEA -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-title">
+                            <h3>SURVEA</h3>
+                        </div>
+                        <span class="badge">In Development</span>
+                    </div>
+                    <p class="project-desc">
+                        AI-driven health monitoring and Remaining Useful Life (RUL) prediction framework for critical high-voltage substation nodes. Directing a dual-model ML engine utilizing Random Forest ensembles for discrete fault classification and LSTM networks for continuous degradation modeling, fused into a native Streamlit HMI.
+                    </p>
+                </div>
+
+                <!-- SWING -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-title">
+                            <h3>Project SWING</h3>
+                        </div>
+                        <span class="badge">Research in Progress</span>
+                    </div>
+                    <p class="project-desc">
+                        Building an autonomous, physics-based Digital Twin utilizing pandapower. Integrating a Multi-Agent System via LangGraph with a reinforcement learning self-feedback loop for real-time electrical grid control and resilient load delegation across complex grid networks.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <!-- EDUCATION -->
-
-    <!-- ========================================= -->
-
-    <section id="education" class="section">
-
+    <section id="education">
         <div class="container">
-
-            <div class="section-heading">
-
-                <h2>
-
-                    Education
-
-                </h2>
-
-                <p>
-
-                    Academic foundations spanning
-                    Artificial Intelligence,
-                    Data Science,
-                    Electrical Engineering
-                    and Applied Mathematics.
-
-                </p>
-
+            <div class="section-header reveal">
+                <h2>Education</h2>
             </div>
-
-            <div class="education-grid">
-
-                <div class="education-card">
-
-                    <span class="year">
-
-                        2023 — Present
-
-                    </span>
-
-                    <h3>
-
-                        Indian Institute of Technology Guwahati
-
-                    </h3>
-
-                    <h4>
-
-                        B.Sc. (Hons.) Data Science & Artificial Intelligence
-
-                    </h4>
-
-                    <p>
-
-                        CPI
-
-                    </p>
-
-                    <strong>
-
-                        8.24
-
-                    </strong>
-
+            <div class="timeline reveal">
+                
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h3>Indian Institute of Technology Guwahati</h3>
+                            <span>2023 - Present</span>
+                        </div>
+                        <p>B.Sc. (Hons.) Data Science and Artificial Intelligence</p>
+                        <div class="timeline-score mt-2">CPI: 8.24</div>
+                    </div>
                 </div>
 
-                <div class="education-card">
-
-                    <span class="year">
-
-                        2023 — Present
-
-                    </span>
-
-                    <h3>
-
-                        Madan Mohan Malaviya University of Technology
-
-                    </h3>
-
-                    <h4>
-
-                        B.Tech Electrical Engineering
-
-                    </h4>
-
-                    <p>
-
-                        CGPA
-
-                    </p>
-
-                    <strong>
-
-                        8.36
-
-                    </strong>
-
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h3>MMMUT Gorakhpur</h3>
+                            <span>2023 - Present</span>
+                        </div>
+                        <p>B.Tech Electrical Engineering</p>
+                        <div class="timeline-score mt-2">CGPA: 8.36</div>
+                    </div>
                 </div>
 
-                <div class="education-card">
-
-                    <span class="year">
-
-                        2021
-
-                    </span>
-
-                    <h3>
-
-                        St. Joseph's School
-
-                    </h3>
-
-                    <h4>
-
-                        Senior Secondary (CBSE)
-
-                    </h4>
-
-                    <strong>
-
-                        94.5%
-
-                    </strong>
-
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h3>St. Joseph's School, Shaktinagar</h3>
+                            <span>2021</span>
+                        </div>
+                        <p>Senior Secondary (CBSE XII)</p>
+                        <div class="timeline-score mt-2">Score: 94.5%</div>
+                    </div>
                 </div>
 
-                <div class="education-card">
-
-                    <span class="year">
-
-                        2019
-
-                    </span>
-
-                    <h3>
-
-                        St. Joseph's School
-
-                    </h3>
-
-                    <h4>
-
-                        Secondary (CBSE)
-
-                    </h4>
-
-                    <strong>
-
-                        93.8%
-
-                    </strong>
-
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h3>St. Joseph's School, Shaktinagar</h3>
+                            <span>2019</span>
+                        </div>
+                        <p>Secondary (CBSE X)</p>
+                        <div class="timeline-score mt-2">Score: 93.8%</div>
+                    </div>
                 </div>
 
             </div>
-
         </div>
-
     </section>
 
-    <!-- ================================ -->
-    <!-- NEXT PART STARTS HERE -->
-    <!-- Skills -->
+    <!-- HIGHLIGHTS & CERTIFICATIONS -->
+    <section id="highlights">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Highlights & Certifications</h2>
+            </div>
+            <div class="highlights-grid reveal">
+                
+                <div class="highlight-card">
+                    <div class="highlight-content">
+                        <h3>GATE 2026</h3>
+                        <p>Qualified — Data Science & Artificial Intelligence (DA)</p>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-content">
+                        <h3>Volunteer, AI Confluence 2024</h3>
+                        <p>Indian Institute of Technology Guwahati</p>
+                    </div>
+                    <div class="hero-actions" style="margin-top: 1rem;">
+                        <a href="https://youtu.be/7XJAsf1hdyY" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Watch Event</a>
+                        <a href="https://www.linkedin.com/posts/mehta-family-school-of-data-science-and-ai-iit-guwahati_iit-guwahati-ai-confluence-2024-activity-7285254036407119872-8hBP" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-content">
+                        <h3>Explainable AI (XAI) Specialization</h3>
+                        <p>Coursera (Duke University) • 2026</p>
+                    </div>
+                    <a href="XAID.pdf" target="_blank" class="btn btn-secondary" style="width: max-content; padding: 0.5rem 1rem; font-size: 0.85rem;">View Certificate</a>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-content">
+                        <h3>AI in Healthcare Specialization</h3>
+                        <p>Coursera (Stanford University) • 2026</p>
+                    </div>
+                    <a href="AIHS.pdf" target="_blank" class="btn btn-secondary" style="width: max-content; padding: 0.5rem 1rem; font-size: 0.85rem;">View Certificate</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container reveal">
+            <h2>Let's Build Something Together.</h2>
+            <div class="contact-buttons">
+                <a href="mailto:r.utthan@op.iitg.ac.in" class="btn btn-primary">
+                    <i class="ph ph-envelope-simple"></i> Email Me
+                </a>
+                <a href="https://github.com/ExcelsiorSR" target="_blank" class="btn btn-secondary">
+                    <i class="ph ph-github-logo"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/srexcelsior/" target="_blank" class="btn btn-secondary">
+                    <i class="ph ph-linkedin-logo"></i> LinkedIn
+                </a>
+                <a href="ResumeUSR.pdf" target="_blank" class="btn btn-secondary">
+                    <i class="ph ph-file-pdf"></i> Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>Designed & Developed by Utthan Singh Roy • 2026</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR INTERACTIONS -->
+    <script>
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
