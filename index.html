@@ -209,6 +209,7 @@
             display: flex;
             gap: 1rem;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -317,15 +318,15 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            background: var(--card-secondary); /* Gives it the solid premium background */
+            background: var(--card-secondary);
             border: 1px solid var(--border);
-            color: var(--text-primary); /* Brightens the text to match Tech Stack */
-            padding: 0.8rem 1.5rem; /* Tightens the shape to look more like a pill */
+            color: var(--text-primary);
+            padding: 0.8rem 1.5rem;
             border-radius: 100px;
             font-size: 0.95rem;
             font-weight: 500;
             transition: var(--transition);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds subtle 3D depth */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         
         .interest-pill i {
@@ -338,7 +339,7 @@
             border-color: var(--accent);
             background: rgba(99, 102, 241, 0.1);
             transform: translateY(-3px);
-            box-shadow: var(--glow); /* Activates the indigo glow on hover */
+            box-shadow: var(--glow);
         }
 
         /* ========================================
@@ -428,11 +429,12 @@
             color: var(--text-secondary);
             font-size: 1.05rem;
             margin-bottom: 2rem;
-            max-width: 800px;
+            max-width: 850px;
         }
 
         .project-metrics {
             display: flex;
+            flex-wrap: wrap;
             gap: 3rem;
             margin-bottom: 2rem;
             padding-bottom: 2rem;
@@ -458,6 +460,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
         }
 
         /* ========================================
@@ -650,17 +654,13 @@
                 order: -1;
                 margin-bottom: 2rem;
             }
-            .project-metrics {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
             .project-footer {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 1.5rem;
             }
             .nav-links {
-                display: none; /* In a full build, add a hamburger menu here */
+                display: none;
             }
         }
     </style>
@@ -788,37 +788,38 @@
                         <span class="pill">C</span>
                         <span class="pill">SQL</span>
                         <span class="pill">R</span>
+                        <span class="pill">HTML/CSS</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3>Machine Learning & AI</h3>
                     <div class="skill-pills">
+                        <span class="pill">PyTorch</span>
                         <span class="pill">TensorFlow</span>
+                        <span class="pill">GenAI & LLMs</span>
+                        <span class="pill">RAG</span>
+                        <span class="pill">Reinforcement Learning</span>
                         <span class="pill">Scikit-Learn</span>
                         <span class="pill">XGBoost</span>
+                        <span class="pill">LightGBM</span>
+                        <span class="pill">TFT</span>
+                        <span class="pill">NSGA-II</span>
                         <span class="pill">SHAP</span>
                         <span class="pill">FinBERT</span>
-                        <span class="pill">NSGA-II</span>
                         <span class="pill">Pandas</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3>Tools & Architecture</h3>
                     <div class="skill-pills">
+                        <span class="pill">LangGraph</span>
+                        <span class="pill">pandapower</span>
                         <span class="pill">Git</span>
                         <span class="pill">GitHub Actions</span>
                         <span class="pill">Streamlit</span>
                         <span class="pill">SQLite</span>
                         <span class="pill">TA-Lib</span>
                         <span class="pill">API Integration</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Exploring</h3>
-                    <div class="skill-pills">
-                        <span class="pill">LangGraph</span>
-                        <span class="pill">Reinforcement Learning</span>
-                        <span class="pill">pandapower</span>
                     </div>
                 </div>
             </div>
@@ -833,6 +834,46 @@
             </div>
             <div class="projects-grid">
                 
+                <!-- Project SWING -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-title">
+                            <h3>Project SWING: Agentic Grid Digital Twin</h3>
+                        </div>
+                    </div>
+                    <p class="project-desc">
+                        Architected a hybrid deterministic-AI platform for autonomous electrical grid resilience. Integrated a LangGraph multi-agent pipeline with a pandapower Digital Twin and Soft Actor-Critic (SAC) reinforcement learning policies for active power redispatch. Engineered a predictive LightGBM forecasting layer and a strict physics validation firewall that successfully intercepted 100% of LLM-induced mathematical hallucinations to optimize N-1 contingencies.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <h4 class="counter" data-target="1.43" data-suffix="%">0</h4>
+                            <p>Forecasting MAPE</p>
+                        </div>
+                        <div class="metric">
+                            <h4 class="counter" data-target="100" data-suffix="%">0</h4>
+                            <p>AC Flow Convergence</p>
+                        </div>
+                        <div class="metric">
+                            <h4 class="counter" data-target="6.41" data-prefix="+">0</h4>
+                            <p>Grid Resilience Index</p>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="skill-pills">
+                            <span class="pill">LangGraph</span>
+                            <span class="pill">pandapower</span>
+                            <span class="pill">SAC RL</span>
+                            <span class="pill">LightGBM</span>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="https://github.com/ExcelsiorSR/Project_SWING" target="_blank" class="btn btn-secondary">GitHub</a>
+                            <a href="P_Report_P_SWING.pdf" target="_blank" class="btn btn-secondary">Report</a>
+                            <a href="https://medium.com/@usingh123roy/bridging-generative-ai-and-power-system-physics-inside-project-swing-a009f6ef9bbb" target="_blank" class="btn btn-secondary">Blog</a>
+                            <a href="https://youtu.be/Aagkc_tWTJ0" target="_blank" class="btn btn-primary">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Project 1 -->
                 <div class="project-card reveal">
                     <div class="project-header">
@@ -935,19 +976,6 @@
                     </div>
                     <p class="project-desc">
                         AI-driven health monitoring and Remaining Useful Life (RUL) prediction framework for critical high-voltage substation nodes. Directing a dual-model ML engine utilizing Random Forest ensembles for discrete fault classification and LSTM networks for continuous degradation modeling, fused into a native Streamlit HMI.
-                    </p>
-                </div>
-
-                <!-- SWING -->
-                <div class="project-card reveal">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>Project SWING</h3>
-                        </div>
-                        <span class="badge">Research in Progress</span>
-                    </div>
-                    <p class="project-desc">
-                        Building an autonomous, physics-based Digital Twin utilizing pandapower. Integrating a Multi-Agent System via LangGraph with a reinforcement learning self-feedback loop for real-time electrical grid control and resilient load delegation across complex grid networks.
                     </p>
                 </div>
 
@@ -1121,6 +1149,7 @@
         document.querySelectorAll('.reveal').forEach((element) => {
             observer.observe(element);
         });
+        
         // Number Counter Animation
         const countElements = document.querySelectorAll('.counter');
         const countObserver = new IntersectionObserver((entries, observer) => {
@@ -1130,6 +1159,7 @@
                     const targetValue = parseFloat(target.getAttribute('data-target'));
                     const isFloat = target.getAttribute('data-target').includes('.');
                     const suffix = target.getAttribute('data-suffix') || '';
+                    const prefix = target.getAttribute('data-prefix') || ''; // Added prefix support
                     const duration = 2000; // 2 seconds
                     const frameRate = 30; // ms per frame
                     const totalFrames = Math.round(duration / frameRate);
@@ -1143,14 +1173,14 @@
                         const current = targetValue * easeProgress;
 
                         if (isFloat) {
-                            target.innerText = current.toFixed(2) + suffix;
+                            target.innerText = prefix + current.toFixed(2) + suffix;
                         } else {
-                            target.innerText = Math.round(current) + suffix;
+                            target.innerText = prefix + Math.round(current) + suffix;
                         }
 
                         if (frame === totalFrames) {
                             clearInterval(counter);
-                            target.innerText = targetValue + suffix; // Ensure exact final value
+                            target.innerText = prefix + targetValue + suffix; // Ensure exact final value
                         }
                     }, frameRate);
                     observer.unobserve(target); // Only animate once
